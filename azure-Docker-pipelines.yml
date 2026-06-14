@@ -54,11 +54,11 @@ steps:
   displayName: 'Run SonarCloud Analysis'
 
 # SonarCloud Publish
-- task: SonarCloudPublish@4
-  continueOnError: true
-  displayName: 'Publish Quality Gate'
-  inputs:
-    pollingTimeoutSec: '300'
+#- task: SonarCloudPublish@4
+#  continueOnError: true
+#  displayName: 'Publish Quality Gate'
+#  inputs:
+#    pollingTimeoutSec: '300'
 
 
 
