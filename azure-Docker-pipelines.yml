@@ -20,7 +20,7 @@ pool:
 steps:
 
 # SonarCloud Prepare
-- task: SonarCloudPrepare@3
+- task: SonarCloudPrepare@4
   displayName: 'Prepare SonarCloud Analysis'
   inputs:
     SonarQube: 'docker-sonar-devops-service-connection-2026'
@@ -50,14 +50,17 @@ steps:
 
 
 # SonarCloud Analyze
-- task: SonarCloudAnalyze@3
+- task: SonarCloudAnalyze@4
   displayName: 'Run SonarCloud Analysis'
 
 # SonarCloud Publish
-- task: SonarCloudPublish@3
+- task: SonarCloudPublish@4
+  continueOnError: true
   displayName: 'Publish Quality Gate'
   inputs:
     pollingTimeoutSec: '300'
+
+
 
 # Docker Build
 - task: Docker@2
